@@ -5,94 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vidarebefordras till Clubmate</title>
   <meta http-equiv="refresh" content="2; url=https://clubs.clubmate.se/harnosandshf/" />
-  <link rel="preconnect" href="https://clubs.clubmate.se" crossorigin>
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #60a5fa;
-      --accent-2: #34d399;
-      --radius: 22px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --green: #16a34a;
+      --orange: #f97316;
+      --white: #ffffff;
+      --text: #111111;
     }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f1f5f9;
-        --bg-soft: #e2e8f0;
-        --card: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #2563eb;
-        --accent-2: #059669;
-        --shadow: 0 12px 28px rgba(2,6,23,.12);
-      }
-    }
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(1200px 800px at 20% 20%, var(--bg-soft), var(--bg));
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--green);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
     }
     .card {
-      width: min(680px, 92vw);
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card), #fff 2%), var(--card));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: clamp(20px, 4vw, 36px);
-      border: 1px solid color-mix(in oklab, var(--card), #000 18%);
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.15);
     }
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(22px, 2.4vw, 32px);
-      letter-spacing: 0.2px;
+      margin: 0 0 12px;
+      font-size: 24px;
     }
-    p { 
-      margin: 8px 0 18px; 
-      color: var(--muted);
-      font-size: clamp(14px, 1.4vw, 16px);
-      line-height: 1.6;
-    }
-    .row {
-      display: flex; align-items: center; gap: 14px;
+    p {
+      margin: 0;
+      font-size: 16px;
+      color: var(--orange);
     }
     .spinner {
-      width: 22px; height: 22px; border-radius: 999px;
-      border: 3px solid color-mix(in oklab, var(--muted), #000 12%);
-      border-top-color: var(--accent);
+      margin: 20px auto 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 3px solid #ddd;
+      border-top-color: var(--orange);
       animation: spin 1s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px; 
-      padding: 12px 18px; border-radius: 14px; text-decoration: none;
-      background: linear-gradient(180deg, color-mix(in oklab, var(--accent), #fff 10%), var(--accent));
-      color: white; font-weight: 600; letter-spacing: 0.2px;
-      box-shadow: 0 6px 18px color-mix(in oklab, var(--accent), black 75%);
-      transition: transform .15s ease, box-shadow .15s ease, opacity .2s ease;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px color-mix(in oklab, var(--accent), black 75%); }
-    .btn:active { transform: translateY(0); }
-    .note { font-size: 13px; opacity: .8; }
-    .badge {
-      display: inline-block; 
-      font-size: 12px; font-weight: 600; letter-spacing: .3px;
-      padding: 6px 10px; border-radius: 999px; 
-      background: color-mix(in oklab, var(--accent-2), #fff 85%);
-      color: color-mix(in oklab, var(--accent-2), #000 35%);
-      border: 1px solid color-mix(in oklab, var(--accent-2), #000 88%);
-      margin-bottom: 12px;
-    }
-    .url { word-break: break-all; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   </style>
   <script>
-    // JavaScript redirect (works in all modern browsers)
     const TARGET = "https://clubs.clubmate.se/harnosandshf/";
     setTimeout(() => {
       try { window.location.replace(TARGET); }
@@ -101,28 +58,10 @@
   </script>
 </head>
 <body>
-  <main class="card" role="main" aria-live="polite">
-    <div class="badge">Trygg omdirigering</div>
-    <h1>Du vidarebefordras till Clubmate – vår leverantör</h1>
-    <p>
-      Vi förbereder din destination. Du skickas automatiskt vidare inom cirka <strong>2 sekunder</strong>.
-    </p>
-    <div class="row" style="margin: 12px 0 22px;">
-      <div class="spinner" aria-hidden="true"></div>
-      <p class="note" style="margin:0">Om inget händer kan du klicka nedan.</p>
-    </div>
-    <a class="btn" href="https://clubs.clubmate.se/harnosandshf/" rel="nofollow noopener" aria-label="Gå till Clubmate nu">
-      <span>Gå till Clubmate</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-
-    <p class="note" style="margin-top:18px">Mål-URL: <span class="url">https://clubs.clubmate.se/harnosandshf/</span></p>
-    <noscript>
-      <p class="note">JavaScript är inaktiverat i din webbläsare. Du kommer fortfarande att skickas vidare automatiskt, men om inte, klicka på knappen ovan.</p>
-    </noscript>
-  </main>
+  <div class="card">
+    <h1>Du vidarebefordras till Clubmate</h1>
+    <p>Vår leverantör av medlemstjänster</p>
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
 </body>
 </html>
